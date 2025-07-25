@@ -1,4 +1,6 @@
 import discord
+import sys
+print("Python version:", sys.version)
 from discord.ext import commands
 import json
 import os
@@ -10,6 +12,11 @@ import y  # Your third bot module
 import threading
 from dotenv import load_dotenv
 load_dotenv()
+try:
+    import audioop
+    print("audioop module is available")
+except ModuleNotFoundError:
+    print("audioop module NOT found")
 
 # === CONFIG ===
 TOKEN = os.getenv('DISCORD_TOKEN')
